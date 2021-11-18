@@ -382,6 +382,9 @@
           if (items[i].type.indexOf("image") !== -1) {
             // We need to represent the image as a file,
             var blob = items[i].getAsFile();
+            if (!blob) {
+              continue;
+            }
             // and use a URL or webkitURL (whichever is available to the browser)
             // to create a temporary URL to the object
             var URLObj = window.URL || window.webkitURL;
